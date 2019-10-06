@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ExampleGCD01VC.h
 //  study_objc
 //
 //  Created by MyMacBookPro on 06/10/2019.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface ExampleGCD01VC : UIViewController
 
 @end
 
+NS_ASSUME_NONNULL_END
