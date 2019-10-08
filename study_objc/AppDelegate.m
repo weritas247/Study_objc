@@ -28,13 +28,46 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    __block UIBackgroundTaskIdentifier background_task; //Create a task object
+    background_task = [application beginBackgroundTaskWithExpirationHandler: ^ {
+        
+        NSLog(@"beginBackgroundTaskWithExpirationHandler");
+        [application endBackgroundTask: background_task]; //Tell the system that we are done with the tasks
+        background_task = UIBackgroundTaskInvalid; //Set the task to be invalid
+        //System will be shutting down the app at any point in time now
+    }];
+    
+    //Background tasks require you to use asyncrous tasks
+    dispatch_async(dispatch_queue_create("background", 0),^{
+        //Perform your tasks that your application requires
+        NSLog(@"\n\nRunning in the background!\n\n");
+        
+        while(1){
+            
+            if(application.applicationState == UIApplicationStateActive){
+                break;
+            }
+            
+            NSLog(@"ping in app delegate");
+//            [[MFNetwork sharedInstance] sendPing:nil];
+            
+            [NSThread sleepForTimeInterval:3];
+            
+        }
+        
+        
+        NSLog(@"@@@@@@@@@@@@@");
+        
+        [application endBackgroundTask: background_task]; //End the task so the system knows that you are done with what you need to perform
+        background_task = UIBackgroundTaskInvalid; //Invalidate the background_task
+    });
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    NSLog([application description]);
+    NSLog(@"application will enter foreground");
 }
 
 
@@ -44,7 +77,7 @@
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    NSLog(@"application will terminate");
 }
 
 

@@ -23,7 +23,7 @@
 		DB06015E2349BC9500870186 /* study_objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = study_objc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB0601612349BC9500870186 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB0601622349BC9500870186 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DB0601682349BC9500870186 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GCD.storyboard; sourceTree = "<group>"; };
+		DB0601682349BC9500870186 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB06016A2349BC9600870186 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB06016D2349BC9600870186 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB06016F2349BC9600870186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +51,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B7522DC234AE84A00781354 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
 		DB0601552349BC9500870186 = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +80,8 @@
 				DB0601612349BC9500870186 /* AppDelegate.h */,
 				DB0601622349BC9500870186 /* AppDelegate.m */,
 				DB0601772349BC9C00870186 /* GCD */,
+				8B7522DC234AE84A00781354 /* AppDelegate */,
+				DB0601672349BC9500870186 /* GCD.storyboard */,
 				DB06016A2349BC9600870186 /* Assets.xcassets */,
 				DB06016C2349BC9600870186 /* LaunchScreen.storyboard */,
 				DB06016F2349BC9600870186 /* Info.plist */,
@@ -84,7 +93,6 @@
 		DB0601772349BC9C00870186 /* GCD */ = {
 			isa = PBXGroup;
 			children = (
-				DB0601672349BC9500870186 /* GCD.storyboard */,
 				DB0601782349BCAB00870186 /* ExampleGCD01VC.h */,
 				DB0601792349BCAB00870186 /* ExampleGCD01VC.m */,
 				DB06017B2349C11700870186 /* ExampleGCD02VC.h */,
